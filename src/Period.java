@@ -6,6 +6,11 @@ public class Period {
 
     // Constructor
     public Period(int startHour, int endHour) {
+
+        if (startHour < 0 || startHour > 23 || endHour < 0 || endHour > 23) {
+            throw new IllegalArgumentException("Invalid start or end hour");
+        }
+
         this.startHour = startHour;
         this.endHour = endHour;
     }

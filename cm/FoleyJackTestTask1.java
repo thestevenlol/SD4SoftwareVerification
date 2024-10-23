@@ -3,40 +3,95 @@ package cm;
 
 import org.junit.jupiter.api.Test;
 import src.Period;
-import src.Rate;
-import src.enums.CarParkKind;
 
-import java.math.BigDecimal;
-import java.util.Random;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FoleyJackTestTask1 {
 
-    final Random random = new Random();
-
     @Test
-    void TestRateAttributesNotNull() {
-        Rate rate = new Rate(CarParkKind.STAFF, new BigDecimal(2), new BigDecimal(1));
-        assertNotNull(rate.getHourlyNormalRate());
-        assertNotNull(rate.getHourlyReducedRate());
+    public void testPeriodValidStartHour() {
+        final int startHour = 2;
+        final int endHour = 3;
+        Period period = new Period(startHour, endHour);
+        assertNotNull(period);
+        assertEquals(startHour, period.getStartHour());
     }
 
     @Test
-    void TestRateAttributesNotNullRandom() {
-        Rate rate = new Rate(CarParkKind.STAFF, new BigDecimal(random.nextInt()), new BigDecimal(random.nextInt()));
-        assertNotNull(rate.getHourlyNormalRate());
-        assertNotNull(rate.getHourlyReducedRate());
+    public void testPeriodValidEndHour() {
+        final int startHour = 2;
+        final int endHour = 3;
+        Period period = new Period(startHour, endHour);
+        assertNotNull(period);
+        assertEquals(endHour, period.getEndHour());
     }
 
     @Test
-    void TestRateCalculation() {
-        Rate rate = new Rate(CarParkKind.STAFF, new BigDecimal(2), new BigDecimal(1));
-        Period period = new Period(8, 16);
-        BigDecimal cost = rate.calculate(period);
-        assertNotNull(cost);
-        assertTrue(cost.compareTo(BigDecimal.ZERO) >= 0);
+    public void testPeriodInvalidStartHour() {
+        final int startHour = -1;
+        final int endHour = 3;
+        assertThrows(IllegalArgumentException.class, () -> new Period(startHour, endHour));
+    }
+
+    @Test
+    public void testPeriodInvalidEndHour() {
+        final int startHour = 2;
+        final int endHour = 25;
+        assertThrows(IllegalArgumentException.class, () -> new Period(startHour, endHour));
+    }
+
+    @Test
+    public void testPeriodOverlaps() {
+        final int startHour1 = 2;
+        final int endHour1 = 5;
+        final int startHour2 = 3;
+        final int endHour2 = 4;
+        Period period1 = new Period(startHour1, endHour1);
+        Period period2 = new Period(startHour2, endHour2);
+        assertTrue(period1.overlaps(period2));
+    }
+
+    @Test
+    public void testPeriodNoOverlaps() {
+        final int startHour1 = 2;
+        final int endHour1 = 3;
+        final int startHour2 = 4;
+        final int endHour2 = 5;
+        Period period1 = new Period(startHour1, endHour1);
+        Period period2 = new Period(startHour2, endHour2);
+        assertFalse(period1.overlaps(period2));
+    }
+
+    @Test
+    public void testPeriodValidBoundaryStartHour() {
+        final int startHour = 0;
+        final int endHour = 3;
+        Period period = new Period(startHour, endHour);
+        assertNotNull(period);
+        assertEquals(startHour, period.getStartHour());
+    }
+
+    @Test
+    public void testPeriodInvalidBoundaryStartHour() {
+        final int startHour = -1;
+        final int endHour = 3;
+        assertThrows(IllegalArgumentException.class, () -> new Period(startHour, endHour));
+    }
+
+    @Test
+    public void testPeriodValidBoundaryEndHour() {
+        final int startHour = 2;
+        final int endHour = 23;
+        Period period = new Period(startHour, endHour);
+        assertNotNull(period);
+        assertEquals(endHour, period.getEndHour());
+    }
+
+    @Test
+    public void testPeriodInvalidBoundaryEndHour() {
+        final int startHour = 2;
+        final int endHour = 24;
+        assertThrows(IllegalArgumentException.class, () -> new Period(startHour, endHour));
     }
 
 }

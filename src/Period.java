@@ -17,11 +17,29 @@ public class Period {
 
     // Method to calculate duration of the period
     public int duration() {
+
+        if (this.startHour == 0 && this.endHour == 0) {
+            return 0;
+        }
+
+        if (this.startHour == this.endHour) {
+            return 0;
+        }
+
+        if (this.startHour > this.endHour) {
+            return 24 - startHour + endHour;
+        }
+
         return endHour - startHour;
     }
 
     // Method to check if two periods overlap
     public boolean overlaps(Period otherPeriod) {
+
+        if (this.startHour == 0 && this.endHour == 0 && otherPeriod.startHour == 0 && otherPeriod.endHour == 0) {
+            throw new IllegalArgumentException();
+        }
+
         return this.startHour < otherPeriod.endHour && otherPeriod.startHour < this.endHour;
     }
 

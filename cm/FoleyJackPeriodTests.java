@@ -6,11 +6,21 @@ import src.Period;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FoleyJackTestTask1 {
+public class FoleyJackPeriodTests {
+
+    /*
+    *
+    * Created by Jack Foley
+    * C00274246
+    * October 23rd, 2024
+    *
+    */
+
+    // Test Class for Period
 
     @Test
     public void testPeriodValidStartHour() {
-        final int startHour = 2;
+        final int startHour = 19;
         final int endHour = 3;
         Period period = new Period(startHour, endHour);
         assertNotNull(period);
@@ -60,6 +70,17 @@ public class FoleyJackTestTask1 {
         Period period1 = new Period(startHour1, endHour1);
         Period period2 = new Period(startHour2, endHour2);
         assertFalse(period1.overlaps(period2));
+    }
+
+    @Test
+    public void testPeriodInvalidOverlaps() {
+        final int startHour1 = 0;
+        final int endHour1 = 0;
+        final int startHour2 = 0;
+        final int endHour2 = 0;
+        Period period1 = new Period(startHour1, endHour1);
+        Period period2 = new Period(startHour2, endHour2);
+        assertThrows(IllegalArgumentException.class, () -> period1.overlaps(period2));
     }
 
     @Test

@@ -1,6 +1,7 @@
 package cm;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import cm.Period;
 import cm.Rate;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("cmTask2")
 public class FoleyJackRateTests2 {
 
     /*

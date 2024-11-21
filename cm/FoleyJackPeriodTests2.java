@@ -3,7 +3,6 @@ package cm;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import cm.Period;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -189,6 +188,30 @@ public class FoleyJackPeriodTests2 {
     void duration_givenValidPeriod_shouldReturnCorrectDuration() {
         Period period = new Period(5, 9);
         assertEquals(4, period.duration(), "Duration should be 4 hours for period 5-9");
+    }
+
+    @Test
+    void duration_minimumValidPeriod_shouldReturnCorrectDuration() {
+        Period period = new Period(0, 1);
+        assertEquals(1, period.duration(), "Duration should be 1 hour for period 0-1");
+    }
+
+    @Test
+    void duration_maximumValidPeriod_shouldReturnCorrectDuration() {
+        Period period = new Period(0, 24);
+        assertEquals(24, period.duration(), "Duration should be 24 hours for period 0-24");
+    }
+
+    @Test
+    void duration_partialDayPeriod_shouldReturnCorrectDuration() {
+        Period period = new Period(6, 18);
+        assertEquals(12, period.duration(), "Duration should be 12 hours for period 6-18");
+    }
+
+    @Test
+    void duration_nearMidnightPeriod_shouldReturnCorrectDuration() {
+        Period period = new Period(22, 24);
+        assertEquals(2, period.duration(), "Duration should be 2 hours for period 22-24");
     }
 
     @Test

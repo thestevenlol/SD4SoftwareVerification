@@ -3,9 +3,6 @@ package cm;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import cm.Period;
-import cm.Rate;
-import cm.CarParkKind;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

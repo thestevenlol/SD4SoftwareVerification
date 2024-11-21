@@ -140,7 +140,6 @@ public class FoleyJackPeriodTests2 {
         assertEquals("start of period and end of period must be between 0 and 24", exception.getMessage());
     }
 
-
     // This test will never actually get to check if end is less than 0 since it will always check start first,
     // and since the source code for Period requires that start < end, it will never actually reach the end condition check.
     @Test

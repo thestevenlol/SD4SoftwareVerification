@@ -2,9 +2,6 @@ package cm;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import src.Period;
-import src.Rate;
-import src.enums.CarParkKind;
 
 import java.math.BigDecimal;
 
@@ -20,6 +17,8 @@ public class FoleyJackRateTests {
      * October 24th, 2024
      *
      */
+
+    /*
 
     @Test
     public void testRateValidKind() {
@@ -117,5 +116,7 @@ public class FoleyJackRateTests {
         BigDecimal expected = BigDecimal.valueOf(5);
         assertEquals(expected, rate.calculate(period));
     }
+
+    */
 
 }

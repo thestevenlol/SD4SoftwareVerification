@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import cm.Period;
 
+Decimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -164,6 +166,23 @@ public class FoleyJackPeriodTests2 {
     void constructor_endOutOfBounds_shouldThrowException() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> new Period(10, 25));
         assertEquals("start of period and end of period must be between 0 and 24", exception.getMessage());
+    }
+
+    @Test
+    public void constructor_overlappingPeriods_shouldThrowException() {
+        ArrayList<Period> reducedPeriods = new ArrayList<>();
+        ArrayList<Period> normalPeriods = new ArrayList<>();
+
+        // Add overlapping periods
+        reducedPeriods.add(new Period(9, 12));
+        normalPeriods.add(new Period(11, 14));
+
+        BigDecimal normalRate = new BigDecimal("10.00");
+        BigDecimal reducedRate = new BigDecimal("5.00");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Rate(CarParkKind.STUDENT, reducedPeriods, normalPeriods, normalRate, reducedRate);
+        });
     }
 
     @Test

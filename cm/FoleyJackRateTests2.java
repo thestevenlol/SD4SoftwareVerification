@@ -54,6 +54,23 @@ public class FoleyJackRateTests2 {
     }
 
     @Test
+    void constructor_invalidNormalPeriods_shouldThrowException() {
+        normalPeriods.clear();
+        normalPeriods.add(new Period(5,10));
+        normalPeriods.add(new Period(6,11));
+        normalPeriods.add(new Period(7,12));
+
+        reducedPeriods.clear();
+        reducedPeriods.add(new Period(18,20));
+
+        normalRate = new BigDecimal("12.00");
+        reducedRate = new BigDecimal("5.00");
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new Rate(CarParkKind.MANAGEMENT, reducedPeriods, normalPeriods, normalRate, reducedRate));
+    }
+
+    @Test
     void constructor_nullRates_shouldThrowException() {
         assertThrows(IllegalArgumentException.class, () ->
                 new Rate(CarParkKind.STAFF, reducedPeriods, normalPeriods, null, reducedRate));

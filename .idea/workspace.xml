@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="722a4836-69ac-4e88-8604-380777b3d24a" name="Changes" comment="Removed old, commented tests.">
+    <list default="true" id="722a4836-69ac-4e88-8604-380777b3d24a" name="Changes" comment="Add additional test for Period to achieve max coverage on overlaps method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cm/FoleyJackPeriodTests2.java" beforeDir="false" afterPath="$PROJECT_DIR$/cm/FoleyJackPeriodTests2.java" afterDir="false" />
     </list>
@@ -50,7 +50,7 @@
     "JUnit.FoleyJackPeriodTests2.constructor_overlappingPeriods_shouldThrowException.executor": "Coverage",
     "JUnit.FoleyJackPeriodTests2.executor": "Coverage",
     "JUnit.FoleyJackRateTests2.constructor_invalidNormalPeriods_shouldThrowException.executor": "Coverage",
-    "JUnit.cmTask2.executor": "Run",
+    "JUnit.cmTask2.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -146,7 +146,7 @@
       <workItem from="1732191058696" duration="197000" />
       <workItem from="1732207510781" duration="7121000" />
       <workItem from="1732269088215" duration="6000" />
-      <workItem from="1732270879367" duration="1061000" />
+      <workItem from="1732270879367" duration="3526000" />
     </task>
     <task id="LOCAL-00001" summary="Small changes">
       <option name="closed" value="true" />
@@ -188,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732271698665</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add additional test for Period to achieve max coverage on overlaps method.">
+      <option name="closed" value="true" />
+      <created>1732272021221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732272021221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +220,8 @@
     <MESSAGE value="Add some additional tests." />
     <MESSAGE value="Improve code coverage for Rate" />
     <MESSAGE value="Removed old, commented tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed old, commented tests." />
+    <MESSAGE value="Add additional test for Period to achieve max coverage on overlaps method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add additional test for Period to achieve max coverage on overlaps method." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SD4SoftwareVerification$FoleyJackPeriodTests2_constructor_overlappingPeriods_shouldThrowException.ic" NAME="FoleyJackPeriodTests2.constructor_overlappingPeriods_shouldThrowException Coverage Results" MODIFIED="1732197051945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -221,7 +230,7 @@
     <SUITE FILE_PATH="coverage/SD4SoftwareVerification$FoleyJackRateTests2_constructor_invalidNormalPeriods_shouldThrowException.ic" NAME="FoleyJackRateTests2.constructor_invalidNormalPeriods_shouldThrowException Coverage Results" MODIFIED="1732271494404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>cm.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SD4SoftwareVerification$cmTask2.ic" NAME="cmTask2 Coverage Results" MODIFIED="1732271508716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/SD4SoftwareVerification$cmTask2.ic" NAME="cmTask2 Coverage Results" MODIFIED="1732271947323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/SD4SoftwareVerification$FoleyJackPeriodTests2.ic" NAME="FoleyJackPeriodTests2 Coverage Results" MODIFIED="1732217945165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>cm.*</FILTER>
     </SUITE>

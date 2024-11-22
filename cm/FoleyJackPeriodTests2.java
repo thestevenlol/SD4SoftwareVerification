@@ -54,12 +54,6 @@ public class FoleyJackPeriodTests2 {
     }
 
     @Test
-    void constructor_startAfterEnd_shouldThrowException() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Period(12, 10));
-        assertEquals("start of period cannot be later or equal to end of period", exception.getMessage());
-    }
-
-    @Test
     void constructor_startOutOfBounds_shouldThrowException() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> new Period(-1, 10));
         assertEquals("start of period and end of period must be between 0 and 24", exception.getMessage());
@@ -69,6 +63,12 @@ public class FoleyJackPeriodTests2 {
     void constructor_endOutOfBounds_shouldThrowException() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> new Period(10, 25));
         assertEquals("start of period and end of period must be between 0 and 24", exception.getMessage());
+    }
+
+    @Test
+    void constructor_startAfterEnd_shouldThrowException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Period(12, 10));
+        assertEquals("start of period cannot be later or equal to end of period", exception.getMessage());
     }
 
     @Test

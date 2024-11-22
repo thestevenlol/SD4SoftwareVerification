@@ -133,6 +133,13 @@ public class FoleyJackPeriodTests2 {
     }
 
     @Test
+    void overlaps_givenPeriodEndsBeforeStart_shouldReturnFalse() {
+        Period period1 = new Period(9, 12);
+        Period period2 = new Period(6, 9);
+        assertFalse(period1.overlaps(period2), "Periods 9-12 and 6-9 should not overlap when one ends before the other starts");
+    }
+
+    @Test
     void overlaps_givenTouchingPeriods_shouldReturnFalse() {
         Period period1 = new Period(9, 12);
         Period period2 = new Period(12, 15);

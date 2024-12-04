@@ -87,12 +87,35 @@ public class Rate {
         }
         return isValid;
     }
+
     public BigDecimal calculate(Period periodStay) {
         int normalRateHours = periodStay.occurences(normal);
         int reducedRateHours = periodStay.occurences(reduced);
-        if (this.kind==CarParkKind.VISITOR) return BigDecimal.valueOf(0);
-        return (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
+        BigDecimal total = (this.hourlyNormalRate.multiply(BigDecimal.valueOf(normalRateHours))).add(
                 this.hourlyReducedRate.multiply(BigDecimal.valueOf(reducedRateHours)));
+
+        switch (this.kind) {
+            case VISITOR:
+                if (total.compareTo(BigDecimal.valueOf(10)) <= 0) {
+                    return BigDecimal.ZERO;
+                } else {
+                    BigDecimal amountAboveTen = total.subtract(BigDecimal.valueOf(10));
+                    return amountAboveTen.multiply(BigDecimal.valueOf(0.5));
+                }
+            case MANAGEMENT:
+                return total.compareTo(BigDecimal.valueOf(4)) < 0 ? BigDecimal.valueOf(4) : total;
+            case STUDENT:
+                if (total.compareTo(BigDecimal.valueOf(5.5)) > 0) {
+                    BigDecimal amountAboveFivePointFive = total.subtract(BigDecimal.valueOf(5.5));
+                    BigDecimal discount = amountAboveFivePointFive.multiply(BigDecimal.valueOf(0.25));
+                    return total.subtract(discount);
+                } else {
+                    return total;
+                }
+            case STAFF:
+                return total.compareTo(BigDecimal.valueOf(16)) > 0 ? BigDecimal.valueOf(16) : total;
+        }
+        return total; // Shouldn't reach here due to a kind being required in Rate.
     }
 
 }

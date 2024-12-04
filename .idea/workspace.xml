@@ -8,9 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="722a4836-69ac-4e88-8604-380777b3d24a" name="Changes" comment="Move test for reading clarity">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="722a4836-69ac-4e88-8604-380777b3d24a" name="Changes" comment="Populate README.md">
+      <change afterPath="$PROJECT_DIR$/cm/FoleyJackRateTests3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cm/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/cm/Rate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,9 @@
     "JUnit.FoleyJackPeriodTests2.constructor_overlappingPeriods_shouldThrowException.executor": "Coverage",
     "JUnit.FoleyJackPeriodTests2.executor": "Coverage",
     "JUnit.FoleyJackRateTests2.constructor_invalidNormalPeriods_shouldThrowException.executor": "Coverage",
+    "JUnit.FoleyJackRateTests3.calculate_returnsHalfOfAmountAboveTen_whenVisitorRateAboveTen.executor": "Run",
     "JUnit.cmTask2.executor": "Coverage",
+    "JUnit.cmTask3.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -68,7 +71,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.cmTask2">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cm" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.cmTask3">
     <configuration name="FoleyJackPeriodTests2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SD4SoftwareVerification" />
       <extension name="coverage">
@@ -116,8 +124,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FoleyJackRateTests3.calculate_returnsHalfOfAmountAboveTen_whenVisitorRateAboveTen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SD4SoftwareVerification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cm" />
+      <option name="MAIN_CLASS_NAME" value="cm.FoleyJackRateTests3" />
+      <option name="METHOD_NAME" value="calculate_returnsHalfOfAmountAboveTen_whenVisitorRateAboveTen" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.cmTask2" />
+      <item itemvalue="JUnit.cmTask3" />
+      <item itemvalue="JUnit.FoleyJackRateTests3.calculate_returnsHalfOfAmountAboveTen_whenVisitorRateAboveTen" />
+      <item itemvalue="JUnit.FoleyJackPeriodTests2" />
+      <item itemvalue="JUnit.FoleyJackPeriodTests2.constructor_overlappingPeriods_shouldThrowException" />
+      <item itemvalue="JUnit.FoleyJackRateTests2.constructor_invalidNormalPeriods_shouldThrowException" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FoleyJackRateTests3.calculate_returnsHalfOfAmountAboveTen_whenVisitorRateAboveTen" />
         <item itemvalue="JUnit.FoleyJackRateTests2.constructor_invalidNormalPeriods_shouldThrowException" />
         <item itemvalue="JUnit.FoleyJackPeriodTests2" />
         <item itemvalue="JUnit.FoleyJackPeriodTests2.constructor_overlappingPeriods_shouldThrowException" />
@@ -147,6 +180,9 @@
       <workItem from="1732207510781" duration="7121000" />
       <workItem from="1732269088215" duration="6000" />
       <workItem from="1732270879367" duration="3951000" />
+      <workItem from="1732277913521" duration="218000" />
+      <workItem from="1733309920529" duration="8000" />
+      <workItem from="1733310733407" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="Small changes">
       <option name="closed" value="true" />
@@ -204,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732277805847</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Populate README.md">
+      <option name="closed" value="true" />
+      <created>1732278124702</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732278124702</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +274,8 @@
     <MESSAGE value="Removed old, commented tests." />
     <MESSAGE value="Add additional test for Period to achieve max coverage on overlaps method." />
     <MESSAGE value="Move test for reading clarity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move test for reading clarity" />
+    <MESSAGE value="Populate README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Populate README.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SD4SoftwareVerification$FoleyJackPeriodTests2_constructor_overlappingPeriods_shouldThrowException.ic" NAME="FoleyJackPeriodTests2.constructor_overlappingPeriods_shouldThrowException Coverage Results" MODIFIED="1732197051945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -239,7 +284,8 @@
     <SUITE FILE_PATH="coverage/SD4SoftwareVerification$FoleyJackRateTests2_constructor_invalidNormalPeriods_shouldThrowException.ic" NAME="FoleyJackRateTests2.constructor_invalidNormalPeriods_shouldThrowException Coverage Results" MODIFIED="1732271494404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>cm.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SD4SoftwareVerification$cmTask2.ic" NAME="cmTask2 Coverage Results" MODIFIED="1732271947323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/SD4SoftwareVerification$cmTask2.ic" NAME="cmTask2 Coverage Results" MODIFIED="1732278071772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/SD4SoftwareVerification$cmTask3.ic" NAME="cmTask3 Coverage Results" MODIFIED="1733311479631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/SD4SoftwareVerification$FoleyJackPeriodTests2.ic" NAME="FoleyJackPeriodTests2 Coverage Results" MODIFIED="1732217945165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>cm.*</FILTER>
     </SUITE>
